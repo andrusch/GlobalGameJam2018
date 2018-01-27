@@ -1,11 +1,9 @@
 GlobalGameJam2018/[Ll]ibrary/
-*/[Ll]ibrary/
-*/*/*/[Ll]ibrary/
 GlobalGameJam2018/[Tt]emp/
-*/[Oo]bj/
-*/[Bb]uild/
-*/[Bb]uilds/
-*/Assets/AssetStoreTools*
+GlobalGameJam2018/[Oo]bj/
+GlobalGameJam2018/[Bb]uild/
+GlobalGameJam2018/[Bb]uilds/
+GlobalGameJam2018/Assets/AssetStoreTools*
 
 # Visual Studio 2015 cache directory
 /.vs/
