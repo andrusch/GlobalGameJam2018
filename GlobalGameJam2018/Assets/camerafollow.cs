@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 public class camerafollow : MonoBehaviour
 {
-    public GameObject PlayerPrefab;
+    public GameObject playerPrefab;
     public Transform target;
     public float smoothSpeed = 0.125f;
-    public Vector3 offset;
+    public Vector3 offSet;
     public float moveSpeed;
     private void Start()
     {
         moveSpeed = 13.0f;
-        offset = transform.position - PlayerPrefab.transform.position;
+        offSet = transform.position - playerPrefab.transform.position;
     }
 
     void Update()

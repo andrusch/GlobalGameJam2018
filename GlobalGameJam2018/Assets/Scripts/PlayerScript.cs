@@ -1,16 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerScript : MonoBehaviour {
     public float moveSpeed;
     public float rotationSpeed = 20f;
     public GameObject camera;
-    public Vector3 offset;
+    public Vector3 offSet;
     public float smoothSpeed = 20.0f;
  
     void Start () {
-        offset = transform.position - camera.transform.position;
+        offSet = transform.position - camera.transform.position;
         moveSpeed = 1.0f;
 	}
 
