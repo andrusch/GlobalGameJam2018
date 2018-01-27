@@ -5,19 +5,16 @@ public class camerafollow : MonoBehaviour
     public Transform target;
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
-  
+    public float moveSpeed;
     private void Start()
     {
-       
+        moveSpeed = 13.0f;
         offset = transform.position - PlayerPrefab.transform.position;
     }
 
-    void LateUpdate()
+    void Update()
     {
-        //Vector3 desiredPosition = target.position + offset;
-        //Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        //transform.position = smoothedPosition;
-        //transform.LookAt(target);
-        transform.position = PlayerPrefab.transform.position + offset;
+        Vector3 v = new Vector3(moveSpeed*Input.GetAxis("Horizontal") * Time.deltaTime, moveSpeed*Input.GetAxis("Vertical") * Time.deltaTime, 0.0f);
+        transform.Translate(v);
     }
 }
