@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameState : MonoBehaviour {
+    // public modifiers
+
 
 	// Use this for initialization
 	void Start () {

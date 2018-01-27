@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Cell : MonoBehaviour {
 
-	// Use this for initialization
+    public List<GameObject> Defenses = new List<GameObject>();
+    public bool IsNucleusDestroyed;
+    public List<GameObject> PowerUps = new List<GameObject>();
+
+    // Use this for initialization
 	void Start () {
 		
 	}
