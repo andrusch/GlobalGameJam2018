@@ -1,5 +1,7 @@
-[Ll]ibrary/
-*/[Tt]emp/
+GlobalGameJam2018/[Ll]ibrary/
+*/[Ll]ibrary/
+*/*/*/[Ll]ibrary/
+GlobalGameJam2018/[Tt]emp/
 */[Oo]bj/
 */[Bb]uild/
 */[Bb]uilds/
