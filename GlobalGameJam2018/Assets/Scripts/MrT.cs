@@ -37,8 +37,6 @@ public class MrT : MonoBehaviour {
                 Counter += 1;    
             }
         }
-
-
 	}
     private void OnTriggerEnter2D(Collider2D collision)
     {
