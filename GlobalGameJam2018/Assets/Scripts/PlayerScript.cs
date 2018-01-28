@@ -3,13 +3,20 @@
 public class PlayerScript : MonoBehaviour {
     public float moveSpeed;
     public float rotationSpeed = 20f;
+    public AudioSource mySource;
+    public AudioClip rhinoSwim;
     public GameObject camera;
     public Vector3 offSet;
     public Vector3 b = new Vector3(1f,0f,0f);
     public float smoothSpeed = 20.0f;
     Animator animator;
     public bool moving = GameState.Instance.CameraIsMoving;
+    
 
+    public void playRhinoSound()
+    {
+        mySource.PlayOneShot(rhinoSwim);
+    }
     void Start () {
         animator= gameObject.GetComponent<Animator>();
         animator.SetBool("moving", false);
@@ -25,6 +32,7 @@ public class PlayerScript : MonoBehaviour {
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S))
         {
+            playRhinoSound();
             animator.SetBool("moving", true);
         }
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S))
