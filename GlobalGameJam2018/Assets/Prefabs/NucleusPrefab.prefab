@@ -19,10 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4421447114337406}
-  - component: {fileID: 212410613727287792}
   - component: {fileID: 58837369529310962}
   - component: {fileID: 58739423453746876}
   - component: {fileID: 114828753729516992}
+  - component: {fileID: 212663378423770134}
   m_Layer: 0
   m_Name: NucleusPrefab
   m_TagString: Untagged
@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1581250577877508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.98, y: -0.28, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -55,9 +55,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.014172435, y: 0}
+  m_Offset: {x: -0.0141716, y: 0}
   serializedVersion: 2
-  m_Radius: 1.0842079
+  m_Radius: 4.470604
 --- !u!58 &58837369529310962
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -70,9 +70,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0000015894572, y: 0}
   serializedVersion: 2
-  m_Radius: 0.985
+  m_Radius: 3.9650264
 --- !u!114 &114828753729516992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NucleusHealth: 4
---- !u!212 &212410613727287792
+--- !u!212 &212663378423770134
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -119,12 +119,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1183a1dd5cab6104ab1dc03ae99b5182, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0db36d948032eaa4ab085dea862e12bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.94, y: 1.97}
+  m_Size: {x: 8.09, y: 8.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
