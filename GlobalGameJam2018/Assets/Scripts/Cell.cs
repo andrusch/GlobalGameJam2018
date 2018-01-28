@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Cell : MonoBehaviour {
 
-    public List<GameObject> Defenses = new List<GameObject>();
+    public GameObject DefenseBarrier;
     public bool IsNucleusDestroyed;
     public List<GameObject> PowerUps = new List<GameObject>();
 
+
     // Use this for initialization
-	void Start () {
-		
-	}
+    void Start () {
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
