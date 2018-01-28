@@ -460,8 +460,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CellPrefab: {fileID: 1285774094057416, guid: b7de0127205d752458b05beb034a1bab, type: 2}
-  numberOfObjects: 5
-  maxX: 2
+  numberOfObjects: 4
+  maxX: 1
   CellSize: 6
 --- !u!4 &1144449741
 Transform:
