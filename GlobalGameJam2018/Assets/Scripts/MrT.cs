@@ -80,4 +80,10 @@ public class MrT : MonoBehaviour {
         transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 180);
         transform.Translate(Vector3.up * Time.deltaTime * speed);
     }
+    void Explode() {
+        
+    }
+    void PlayPoppingSound() {
+        
+    }
 }
