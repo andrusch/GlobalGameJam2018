@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameState : MonoBehaviour {
+public class GameState  {
     // public modifiers
     #region Singleton Methods
     private static GameState _instance = null;
@@ -21,5 +21,6 @@ public class GameState : MonoBehaviour {
 
     }
     public bool CameraIsMoving = false;
-    
+    public int MaxX;
+    public int MaxY;
 }
