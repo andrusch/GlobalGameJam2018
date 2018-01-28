@@ -18,7 +18,7 @@ public class PlayerScript : MonoBehaviour {
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
         
-        transform.position = Vector3.Lerp(camera.transform.position + offset, camera.transform.position + offset,smoothSpeed);
+        transform.position = Vector3.Lerp(camera.transform.position + offSet, camera.transform.position + offSet,smoothSpeed);
         
 
     }
