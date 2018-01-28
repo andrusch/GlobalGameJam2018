@@ -16,6 +16,15 @@ public class NucleusScript : MonoBehaviour {
 	}
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.name.ToLower().Contains("rocketprefab"))
+        {
+            NucleusHealth--;
+            if (NucleusHealth == 0)
+            {
+                GameState.Instance.NucleiDestroyed++;
+                Destroy(gameObject);
+            }
+        }
         //if (collision.gameObject.name == PlayerPrefab.name)
             //isWithinTrigger = true;
     }

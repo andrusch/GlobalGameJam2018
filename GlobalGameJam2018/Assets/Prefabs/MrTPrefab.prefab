@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 95075952929987402}
   - component: {fileID: 82505058454290650}
   m_Layer: 0
-  m_Name: WhiteCellPrefab
+  m_Name: MrTPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,9 +56,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.7034564, y: 0.0016673405}
+  m_Offset: {x: -0.04626314, y: 0.00166893}
   serializedVersion: 2
-  m_Radius: 20
+  m_Radius: 133.21266
 --- !u!82 &82505058454290650
 AudioSource:
   m_ObjectHideFlags: 1
@@ -168,8 +168,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
-  mySource: {fileID: 82505058454290650}
-  hit: {fileID: 8300000, guid: 04429dc536f40c940ae821e8c05c61a9, type: 3}
   PatrolDistance: 40
   PatrolSpeed: 1
   PlayerPrefab: {fileID: 4572331846269978, guid: c3d8dff12dbdf4008a62ba3eb5683bb5,

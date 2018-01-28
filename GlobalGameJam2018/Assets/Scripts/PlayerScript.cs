@@ -6,13 +6,18 @@ public class PlayerScript : MonoBehaviour {
     public AudioSource mySource;
     public AudioClip rhinoSwim;
     public GameObject camera;
+    public GameObject RocketPrefab;
     public Vector3 offSet;
     public Vector3 b = new Vector3(1f,0f,0f);
+
+    public float moveSpeedBoost = 50;
+    private int boostCount = 0;
+    private bool isBoostedSpeed = false;   
+
     public float smoothSpeed = 20.0f;
     Animator animator;
     public bool moving = GameState.Instance.CameraIsMoving;
     
-
     public void playRhinoSound()
     {
         mySource.PlayOneShot(rhinoSwim);
@@ -25,6 +30,16 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void Update () {
+        if (isBoostedSpeed)
+        {
+            if (boostCount > 100)
+            {
+                boostCount = 0;
+                isBoostedSpeed = false;
+                GameState.Instance.SpeedBoost = 0;
+            }
+            boostCount++;
+        }
         moving = GameState.Instance.CameraIsMoving;
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg+90;
@@ -41,7 +56,26 @@ public class PlayerScript : MonoBehaviour {
         }
         
         transform.position = Vector3.Lerp(camera.transform.position + offSet, camera.transform.position + offSet,smoothSpeed);
-        
 
+        FireRocket();
+    }
+    void FireRocket()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Instantiate(RocketPrefab);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        if (collision.gameObject.name.ToLower().Contains("mitochondria"))
+        {
+            isBoostedSpeed = true;
+            GameState.Instance.SpeedBoost = moveSpeedBoost;
+            Destroy(collision.gameObject);
+        }
+        //if (collision.gameObject.name == PlayerPrefab.name)
+        //isWithinTrigger = true;
     }
 }

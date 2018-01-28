@@ -27,6 +27,7 @@ public class GameState
     public int EnemiesKilled = 0;
     public bool IsPlayerInvincible = false;
     public int NucleiDestroyed = 0;
+    public float SpeedBoost = 0;
     public AudioHelpers AudioHelper
     {
         get
@@ -34,4 +35,13 @@ public class GameState
             return (AudioHelpers)GameObject.Find("AudioHelpers").GetComponent(typeof(AudioHelpers));
         }
     }
+
+    public GameObject Player
+    {
+        get
+        {
+            return GameObject.Find("PlayerPrefab");
+        }
+    }
+    
 }

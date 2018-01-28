@@ -14,6 +14,7 @@ public class MrT : MonoBehaviour {
     private bool IsDead = false;
 
 
+
 	// Use this for initialization
 	void Start () {
 		
@@ -59,8 +60,16 @@ public class MrT : MonoBehaviour {
 	}
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == PlayerPrefab.name)
-            isWithinTrigger = true; 
+        if (collision.gameObject.name.ToLower().Contains("rocketprefab"))
+        {
+            GameState.Instance.EnemiesKilled++;
+            Destroy(gameObject);
+        }
+        else
+        {
+            if (collision.gameObject.name == PlayerPrefab.name)
+                isWithinTrigger = true;
+        }
         
     }
     private void OnTriggerStay2D(Collider2D collision)

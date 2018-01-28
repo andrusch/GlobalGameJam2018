@@ -37,7 +37,8 @@ public class camerafollow : MonoBehaviour
             GameState.Instance.CameraIsMoving = true;
 
         }
-        Vector3 v = new Vector3(moveSpeed*Input.GetAxis("Horizontal") * Time.deltaTime, moveSpeed*Input.GetAxis("Vertical") * Time.deltaTime, 0.0f);
+        float tempMoveSpeed = moveSpeed + GameState.Instance.SpeedBoost;
+        Vector3 v = new Vector3(tempMoveSpeed * Input.GetAxis("Horizontal") * Time.deltaTime, tempMoveSpeed * Input.GetAxis("Vertical") * Time.deltaTime, 0.0f);
         transform.Translate(v);
     }
 }
