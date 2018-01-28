@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameState  {
+public class GameState
+{
     // public modifiers
     #region Singleton Methods
     private static GameState _instance = null;
@@ -22,5 +23,15 @@ public class GameState  {
     }
     public bool CameraIsMoving = false;
     public int MaxX;
-    public int MaxY;
+    public int PlayerHealth = 10;
+    public int EnemiesKilled = 0;
+    public bool IsPlayerInvincible = false;
+    public int NucleiDestroyed = 0;
+    public AudioHelpers AudioHelper
+    {
+        get
+        {
+            return (AudioHelpers)GameObject.Find("AudioHelpers").GetComponent(typeof(AudioHelpers));
+        }
+    }
 }
