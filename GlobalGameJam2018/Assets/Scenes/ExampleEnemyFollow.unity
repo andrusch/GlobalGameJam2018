@@ -239,10 +239,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CellPrefab: {fileID: 1953271863851588, guid: f2144561745794b4fb2cee7beac88f11, type: 2}
-  numberOfObjects: 3
-  maxX: 10
-  maxY: 10
-  CellSize: 5
+  numberOfObjects: 8
+  maxX: 3
+  CellSize: 9
 --- !u!4 &1286487038
 Transform:
   m_ObjectHideFlags: 0
@@ -348,10 +347,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0.0003
   rotationSpeed: 20
+  mySource: {fileID: 0}
+  rhinoSwim: {fileID: 0}
   camera: {fileID: 849560563}
   offSet: {x: 0, y: 0, z: 0}
   b: {x: 1, y: 0, z: 0}
   smoothSpeed: 20
+  moving: 0
 --- !u!50 &2094666739
 Rigidbody2D:
   serializedVersion: 4
