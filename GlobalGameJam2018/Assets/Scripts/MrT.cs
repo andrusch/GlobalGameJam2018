@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MrT : MonoBehaviour {
-    public float MoveSpeed;
-    public float PatrolDistance;
-    public float PatrolSpeed;
+    public float MoveSpeed = 2;
+    public float PatrolDistance = 40;
+    public float PatrolSpeed = 1;
     public Transform PlayerPrefab;
     public Transform NucleusPrefab;
-    public int moveCounter = 20;
+    public int moveCounter = 10;
     private bool isWithinTrigger = false;
     private int Counter = 0; 
 
