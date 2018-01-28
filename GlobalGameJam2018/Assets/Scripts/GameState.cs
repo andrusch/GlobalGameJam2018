@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour {
     // public modifiers
+    #region Singleton Methods
+    private static GameState _instance = null;
+    public static GameState Instance
+    {
+        get
+        {
+            if (_instance == null)
+                _instance = new GameState();
+            return _instance;
+        }
+    }
+    #endregion
+    public GameState()
+    {
 
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
+    public bool CameraIsMoving = false;
+    
 }
