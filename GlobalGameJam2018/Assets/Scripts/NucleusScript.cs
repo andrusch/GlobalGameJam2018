@@ -14,4 +14,19 @@ public class NucleusScript : MonoBehaviour {
 	void Update () {
 		
 	}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //if (collision.gameObject.name == PlayerPrefab.name)
+            //isWithinTrigger = true;
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        //if (collision.gameObject.name == PlayerPrefab.name)
+            //isWithinTrigger = true;
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        //if (collision.gameObject.name == PlayerPrefab.name)
+            //isWithinTrigger = false;
+    }
 }

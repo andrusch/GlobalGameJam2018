@@ -12,7 +12,8 @@ public class MrT : MonoBehaviour {
     public Transform NucleusPrefab;
     public int moveCounter = 10;
     private bool isWithinTrigger = false;
-    private int Counter = 0; 
+    private int Counter = 0;
+    private bool IsDead = false;
 
 
 	// Use this for initialization
@@ -25,18 +26,36 @@ public class MrT : MonoBehaviour {
         
         if (isWithinTrigger)
         {
-            Move(PlayerPrefab.position, MoveSpeed);
+            float distanceToPlayerPrefab = Vector3.Distance(transform.position, PlayerPrefab.position);
+            Vector3 PlayerPrefabDir = PlayerPrefab.position - transform.position;
+            float angle = Mathf.Atan2(PlayerPrefabDir.y, PlayerPrefabDir.x) * Mathf.Rad2Deg - 90f;
+            Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 180);
+            transform.Translate(Vector3.up * Time.deltaTime * MoveSpeed);
+
+            //Move(PlayerPrefab.position, MoveSpeed);
         }
         else{
-            if(Counter == moveCounter){
+            if (Counter == moveCounter)
+            {
                 Vector3 randomPosition = UnityEngine.Random.insideUnitSphere * PatrolDistance;
                 randomPosition += NucleusPrefab.transform.position;
-                Move(randomPosition, PatrolSpeed);
+
+
+                float distanceToRandomPosition = Vector3.Distance(transform.position, randomPosition);
+                Vector3 RandomDir = randomPosition - transform.position;
+                float angle = Mathf.Atan2(RandomDir.y, RandomDir.x) * Mathf.Rad2Deg - 90f;
+                Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 180);
+                transform.Translate(Vector3.up * Time.deltaTime * PatrolSpeed);
+
+                //Move(randomPosition, PatrolSpeed);
                 Counter = 0;
             }
-            else{
+            else
+            {
                 transform.Translate(Vector3.up * Time.deltaTime * PatrolSpeed);
-                Counter += 1;    
+                Counter += 1;
             }
         }
 	}
@@ -52,11 +71,15 @@ public class MrT : MonoBehaviour {
         {
             isWithinTrigger = true;
             float distanceToPlayer = Vector3.Distance(PlayerPrefab.position, transform.position);
-            if (distanceToPlayer < 3)
+            if (distanceToPlayer < 2)
             {
-                GameState.Instance.PlayerHealth--;
-                PlayPoppingSound();
-                Destroy(transform.parent.gameObject);
+                if (!IsDead)
+                {
+                    GameState.Instance.PlayerHealth--;
+                    PlayPoppingSound();
+                    Destroy(gameObject);
+                    IsDead = true;
+                }
             }
         }
             
@@ -79,6 +102,6 @@ public class MrT : MonoBehaviour {
         
     }
     void PlayPoppingSound() {
-        mySource.PlayOneShot(hit);
+        GameState.Instance.AudioHelper.PlayMrTHitSound();
     }
 }
