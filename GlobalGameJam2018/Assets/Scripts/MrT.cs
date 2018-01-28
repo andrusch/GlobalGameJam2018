@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MrT : MonoBehaviour {
     public float MoveSpeed = 2;
-    public AudioSource mySource;
-    public AudioClip hit;
     public float PatrolDistance = 40;
     public float PatrolSpeed = 1;
     public Transform PlayerPrefab;
