@@ -25,4 +25,5 @@ public class GameState  {
     public int PlayerHealth = 10;
     public int EnemiesKilled = 0;
     public bool IsPlayerInvincible = false;
+    public int NucleiDestroyed = 0;
 }
