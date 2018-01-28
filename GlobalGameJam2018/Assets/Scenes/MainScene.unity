@@ -168,7 +168,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: bf94a6f0036dd6f4aa9787be9fa8d2a8,
+      objectReference: {fileID: 21300000, guid: f403e708aafa5c245bf7e36533a75702,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3d8dff12dbdf4008a62ba3eb5683bb5, type: 2}
@@ -192,7 +192,7 @@ MonoBehaviour:
   moveSpeed: 0
   rotationSpeed: 5
   camera: {fileID: 591662857}
-  offset: {x: 0, y: 0, z: 0}
+  offSet: {x: 0, y: 0, z: 0}
   smoothSpeed: 0.125
 --- !u!4 &454145987 stripped
 Transform:
@@ -292,10 +292,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4598a6263d7c4584eaea0e423c9522ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPrefab: {fileID: 454145984}
+  playerPrefab: {fileID: 0}
   target: {fileID: 454145987}
   smoothSpeed: 0.125
-  offset: {x: 0, y: 0, z: 0}
+  offSet: {x: 0, y: 0, z: 0}
   moveSpeed: 0
 --- !u!1001 &753596796
 Prefab:
