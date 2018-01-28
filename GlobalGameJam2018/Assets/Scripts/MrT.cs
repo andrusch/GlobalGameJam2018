@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MrT : MonoBehaviour {
     public float MoveSpeed = 2;
+    public AudioSource mySource;
+    public AudioClip hit;
     public float PatrolDistance = 40;
     public float PatrolSpeed = 1;
     public Transform PlayerPrefab;
@@ -41,12 +43,23 @@ public class MrT : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == PlayerPrefab.name)
-            isWithinTrigger = true;    
+            isWithinTrigger = true; 
+        
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.name == PlayerPrefab.name)
-            isWithinTrigger = true;    
+        {
+            isWithinTrigger = true;
+            float distanceToPlayer = Vector3.Distance(PlayerPrefab.position, transform.position);
+            if (distanceToPlayer < 3)
+            {
+                GameState.Instance.PlayerHealth--;
+                PlayPoppingSound();
+                Destroy(transform.parent.gameObject);
+            }
+        }
+            
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -66,6 +79,6 @@ public class MrT : MonoBehaviour {
         
     }
     void PlayPoppingSound() {
-        
+        mySource.PlayOneShot(hit);
     }
 }
