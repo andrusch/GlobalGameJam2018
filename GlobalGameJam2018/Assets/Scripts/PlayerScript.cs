@@ -7,9 +7,11 @@ public class PlayerScript : MonoBehaviour {
     public Vector3 offSet;
     public Vector3 b = new Vector3(1f,0f,0f);
     public float smoothSpeed = 20.0f;
-    private Animator animator;
+    Animator animator;
+
     void Start () {
-        animator = GetComponent<Animator>();
+        animator= gameObject.GetComponent<Animator>();
+        animator.SetBool("moving", false);
         offSet = transform.position - camera.transform.position;
         moveSpeed = 1.0f;
 	}
@@ -21,7 +23,7 @@ public class PlayerScript : MonoBehaviour {
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
         if (GameState.Instance.CameraIsMoving)
         {
-            animator.SetTrigger("run");
+            animator.SetBool("moving", true);
         }
         transform.position = Vector3.Lerp(camera.transform.position + offSet, camera.transform.position + offSet,smoothSpeed);
         
