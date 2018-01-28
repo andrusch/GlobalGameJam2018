@@ -22,5 +22,7 @@ public class GameState  {
     }
     public bool CameraIsMoving = false;
     public int MaxX;
-    public int MaxY;
+    public int PlayerHealth = 10;
+    public int EnemiesKilled = 0;
+    public bool IsPlayerInvincible = false;
 }
