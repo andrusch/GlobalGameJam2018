@@ -23,29 +23,13 @@ public class MrT : MonoBehaviour {
         
         if (isWithinTrigger)
         {
-            float distanceToPlayerPrefab = Vector3.Distance(transform.position, PlayerPrefab.position);
-            Vector3 PlayerPrefabDir = PlayerPrefab.position - transform.position;
-            float angle = Mathf.Atan2(PlayerPrefabDir.y, PlayerPrefabDir.x) * Mathf.Rad2Deg - 90f;
-            Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 180);
-            transform.Translate(Vector3.up * Time.deltaTime * MoveSpeed);
-
-            //Move(PlayerPrefab.position, MoveSpeed);
+            Move(PlayerPrefab.position, MoveSpeed);
         }
         else{
             if(Counter == moveCounter){
                 Vector3 randomPosition = UnityEngine.Random.insideUnitSphere * PatrolDistance;
                 randomPosition += NucleusPrefab.transform.position;
-
-
-                float distanceToRandomPosition = Vector3.Distance(transform.position, randomPosition);
-                Vector3 RandomDir = randomPosition - transform.position;
-                float angle = Mathf.Atan2(RandomDir.y, RandomDir.x) * Mathf.Rad2Deg - 90f;
-                Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 180);
-                transform.Translate(Vector3.up * Time.deltaTime * PatrolSpeed);
-
-                //Move(randomPosition, PatrolSpeed);
+                Move(randomPosition, PatrolSpeed);
                 Counter = 0;
             }
             else{
