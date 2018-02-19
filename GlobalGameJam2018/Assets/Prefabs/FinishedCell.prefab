@@ -274,7 +274,7 @@ CircleCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1502648945945792}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -728,7 +728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad6290056728841d19c6173b6debcde9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Defenses: []
+  DefenseBarrier: {fileID: 0}
   IsNucleusDestroyed: 0
   PowerUps: []
 --- !u!114 &114548308995743904

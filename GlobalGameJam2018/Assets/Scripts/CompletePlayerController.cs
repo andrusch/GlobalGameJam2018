@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CompletePlayerController : MonoBehaviour {
-
+    /*
     float x = Input.GetAxis("Horizontal") * Time.deltaTime * moveDistance * moveDampening;
     float y = Input.GetAxis("Vertical") * Time.deltaTime * moveDistance * moveDampening;
 
@@ -37,5 +37,6 @@ public class CompletePlayerController : MonoBehaviour {
     //    //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
     //    //rb2d.AddForce(movement * speed);
     //}
+    */
 
 }

@@ -26,7 +26,6 @@ public class PlayerScript : MonoBehaviour {
         animator= gameObject.GetComponent<Animator>();
         animator.SetBool("moving", false);
         offSet = transform.position - camera.transform.position;
-        moveSpeed = 1.0f;
 	}
 
 	void Update () {
@@ -40,11 +39,18 @@ public class PlayerScript : MonoBehaviour {
             }
             boostCount++;
         }
+        float tempMoveSpeed = moveSpeed + GameState.Instance.SpeedBoost;
+        Vector3 v = new Vector3(tempMoveSpeed * -Input.GetAxis("Horizontal") * Time.deltaTime, tempMoveSpeed * -Input.GetAxis("Vertical") * Time.deltaTime, 0.0f);
+        transform.Translate(v);
+
         moving = GameState.Instance.CameraIsMoving;
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg+90;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+
+
+
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S))
         {
             playRhinoSound();
@@ -54,8 +60,7 @@ public class PlayerScript : MonoBehaviour {
         {
             animator.SetBool("moving", false);
         }
-        
-        transform.position = Vector3.Lerp(camera.transform.position + offSet, camera.transform.position + offSet,smoothSpeed);
+
 
         FireRocket();
     }
